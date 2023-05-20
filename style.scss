@@ -10,7 +10,7 @@ $theme-colors: (
     // "danger":     red,
     // "light":      red,
     "dark":       #5a19b5,
-    "bgDisabled" : #D6D7D9,
+    "bgDisabled" : #d9bfff,
     "txtDisabled" : #929293,
     "darkGray" : #757575,
     "default" : #f0f0ff
@@ -37,7 +37,7 @@ a {
 // highlight when hover on a tags
 a.activable:hover{color: #6900FF;}
 
-button.active{
+.active{
     color: #6900FF !important;
     font-weight: 600;
     border-bottom: 2px solid #6900FF;
@@ -121,6 +121,43 @@ label.label-for-ck::after{
     box-sizing: content-box;
 }
 
+// radio button customize
+[type="radio"] {
+  vertical-align: middle;
+  appearance: none;
+  border: max(1px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+}
+
+[type="radio"]:checked {
+  border: 0.25em solid #eb4002;
+}
+
+[type="radio"]:focus-visible {
+  outline-offset: max(2px, 0.1em);
+  outline: max(2px, 0.1em) dotted #eb4002;
+}
+
+[type="radio"]:hover {
+  box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+  cursor: pointer;
+}
+
+[type="radio"]:disabled {
+  background-color: lightgray;
+  box-shadow: none;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+[type="radio"]:disabled + span {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+
 // styles for horizontal divider lines between text
 .divider-text{display: flex; width: 100%; align-items: center;}
 .divider-text::after,.divider-text::before{content: ''; display: block; width: 100%; height: 1px; background-color: #8A6652;}
@@ -128,3 +165,16 @@ label.label-for-ck::after{
 
 // hide warning messages
 .message-warn{display: none;}
+
+// bullet for lists
+li span.bullet{
+    line-height: 1rem;
+}
+li span.bullet::before{
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    background-color: #757575;
+    margin-right: .5rem;
+}

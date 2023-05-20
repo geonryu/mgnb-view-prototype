@@ -93,5 +93,13 @@ document.addEventListener("DOMContentLoaded", () => {
     let regExp = /^01(?:0|1|[6-9])-(?:\d{3}|\d{4})-\d{4}$/;
     let userInput = regExp.test(e.target.value);
     // 전화번호 형식 검사
-  });
+
+    if (e.target.value.replace(/-/g, "").length >= 10) {
+      document.getElementById("verifyCall").removeAttribute("disabled");
+      document.getElementById("verifyCall").classList.remove("bg-bgDisabled");
+    } else {
+      document.getElementById("verifyCall").setAttribute("disabled", "");
+      document.getElementById("verifyCall").classList.add("bg-bgDisabled");
+    }
+  }); //본인인증 유효성 끝
 });
